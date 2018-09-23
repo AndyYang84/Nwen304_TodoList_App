@@ -51,17 +51,6 @@ $('#show').click( function(){
 });
 
 
-$('#reset').button({icons: {primary: "ui-icon-battery-3"  }});
-$('#reset').click( function(){
-  $.ajax({
-    method: 'reset',
-    url: '/api/items',
-    success: function() {
-       //alert("Successfully deleted.");
-    }
-   }); 
-  
-});
 
 
 
