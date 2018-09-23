@@ -171,9 +171,6 @@ $('#comment_dialog').dialog({ modal: true, autoOpen:false,
  
     
     //sortable 2-6 support drag and drop
-    //This drag and drop only allows one-way doing: completed-->todo (NOT todo-->completed)
-    //Besides, only dropping the task on the top position will correctly updating database.
-    
     $('.sortlist').sortable({
     connectWith: '.sortlist',
     cursor: 'pointer',
