@@ -80,10 +80,9 @@ $('#comment_dialog').dialog({ modal: true, autoOpen:false,
        var comment_body= $('#comment_body').val();
        var comment_name= $('#comment_name').val();
        if(comment_body===""){return false;}
-       //AJAX for posting comments
-       $.post("/comments",{"name": comment_name, "content": comment_body} , function(data, status){
-    })
+       alert("Thanks for your comment,"+ comment_name+"!");
 
+       $(this).dialog('close');
 
     },
     "Cancel": function() { $(this).dialog('close'); }
