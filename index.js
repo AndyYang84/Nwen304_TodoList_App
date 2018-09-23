@@ -113,8 +113,8 @@ app.delete('/api/items',urlencodedParser, async (req,res)=>{
 
 
 
-/** 
-app.reset('/api/items',urlencodedParser, async (req,res)=>{
+
+app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
   try {
     const client = await pool.connect();
     var result = await client.query("DELETE FROM todo_table;");
@@ -131,7 +131,7 @@ app.reset('/api/items',urlencodedParser, async (req,res)=>{
        console.error(err);
        res.send("Error " + err); 
   }
- });*/
+ });
 
 
 

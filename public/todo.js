@@ -51,6 +51,19 @@ $('#show').click( function(){
 });
 
 
+$('#reset').button({icons: {primary: "ui-icon-battery-3"  }});
+$('#reset').click( function(){
+  $.ajax({
+    method: 'DELETE',
+    url: '/api/items/reset',
+    data: {user_name: n , task: t},
+    success: function addCell() {
+       //alert("Successfully deleted.");
+    }
+   }); 
+});
+
+
 
 
 
