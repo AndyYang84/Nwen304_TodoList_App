@@ -88,7 +88,10 @@ $('#comment_dialog').dialog({ modal: true, autoOpen:false,
 
     },
     "Cancel": function() { $(this).dialog('close'); }
-  }
+  },
+  close:function() {
+    $('#complete-dialog input').val('');              
+ }
   });
 
 
