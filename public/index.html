@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My To-Do List</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link href="css/todo.css" rel="stylesheet">
+<link href="css/jquery-ui.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="todo.js"></script>
+
+
+
+
+
+</head>
+<body  onload="Load()">
+<div class="container">
+<div id="to-do">
+<h1>My To-do List</h1>
+<!-- add button here -->
+<button id="add-todo">Add to-do item</button>
+
+
+<h2>To Be Done</h2>
+<ul id="todo-list" class="sortlist">
+  
+</ul>
+</div>
+
+
+
+<div id="completed">
+<h2>Completed Tasks</h2>
+<ul id="completed-list" class= "sortlist">
+  
+</ul>
+</div>
+
+
+
+<div>
+    <div id="blurb"></div>
+</div>
+<button id="show" >Show tasks in console</button>
+
+
+
+
+
+<!-- add dialog box here -->
+<div id="new-todo" title="Add to-do item">
+   <form>
+   
+      <p hidden id="error">
+          Task name must be longer than 3 characters.
+      </p>
+      <p>
+          <label for="task">Task Name:</label>
+          <input type="text" name="task" id="task">
+          
+          <label for="task">User Name:</label>
+          <input type="text" name="user" id="U">
+      </p>
+       
+   </form>
+</div>
+
+
+
+<!-- add dialog box for 2-8 Confirm delete item-->
+<div id="confirm-delete" title="Confirm Deletion">
+   <form>
+      <p>
+          <label for="description">Do you want to confirm deletion?</label>
+      </p>
+       
+   </form>
+</div>
+
+
+
+<!-- edit todo dialog-->
+<div id="edit-todo" title="Edit task" >
+    <form>
+        <p>
+            <label for="task">Task Name:</label>
+            <input type="text" name="task" id="ed">
+            
+            <label for="user">User Name:</label>
+            <input type="text" name="user" id="u">
+        </p>
+    </form>
+</div>
+
+
+</div>
+</body>
+</html>
