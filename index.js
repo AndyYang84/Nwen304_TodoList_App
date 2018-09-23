@@ -113,7 +113,7 @@ app.delete('/api/items',urlencodedParser, async (req,res)=>{
 
 
 
-
+/** 
 app.reset('/api/items',urlencodedParser, async (req,res)=>{
   try {
     const client = await pool.connect();
@@ -131,7 +131,7 @@ app.reset('/api/items',urlencodedParser, async (req,res)=>{
        console.error(err);
        res.send("Error " + err); 
   }
- });
+ });*/
 
 
 
