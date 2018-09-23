@@ -63,6 +63,11 @@ $('#reset').click( function(){
    });
 });
 
+$('#refresh').button({icons: {primary: "ui-icon-refresh"  }});
+$('#refresh').click( function(){
+  location.reload();
+});
+
 
 
 
