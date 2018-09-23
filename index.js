@@ -16,11 +16,12 @@ const pool = new Pool({
 var app = express();
 var comments=[];
 
+app.use(express.jason());
+
 app
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .use(express.jason())
   
   
   
