@@ -21,7 +21,7 @@
 <body  onload="Load()">
 <div class="container">
 <div id="to-do">
-<h1>My To-do List</h1>
+<h1>My To-do List Application</h1>
 <!-- add button here -->
 <button id="add-todo">Add to-do item</button>
 
@@ -46,7 +46,13 @@
 <div>
     <div id="blurb"></div>
 </div>
-<button id="show" >Show tasks in console</button>
+
+
+<div id="completed">
+<h2>Others</h2>
+<button id="show" >Show data in console</button>
+  
+</div>
 
 
 
@@ -58,6 +64,7 @@
    
       <p hidden id="error">
           Task name must be longer than 3 characters.
+          User name cannot be blank. Please try again:
       </p>
       <p>
           <label for="task">Task Name:</label>
