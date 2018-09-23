@@ -145,6 +145,10 @@ app.post('/comments',urlencodedParser ,(req, res)=>{
   res.send(comment);
 });
 
+app.get('/comments',urlencodedParser ,(req, res)=>{
+  res.send(comments);
+});
+
 
 app.get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

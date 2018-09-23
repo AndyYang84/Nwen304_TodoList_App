@@ -86,8 +86,6 @@ $('#comment_dialog').dialog({ modal: true, autoOpen:false,
        $(this).dialog('close');
        alert("Thanks for your comment, "+ comment_name+"!");
 
-
-
     },
     "Cancel": function() { $(this).dialog('close'); }
   }
