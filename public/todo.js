@@ -45,11 +45,26 @@ function Load(){
 //main
 $(document).ready(function(e) {
 //for testing purpose to see what is in the server through the console
-
 $('#show').button({icons: {primary: "ui-icon-battery-3"  }});
 $('#show').click( function(){
   $.get("/api/items", function(data, status){ console.log(data);})
 });
+
+
+$('#reset').button({icons: {primary: "ui-icon-battery-3"  }});
+$('#reset').click( function(){
+  $.ajax({
+    method: 'reset',
+    url: '/api/items',
+    success: function() {
+       //alert("Successfully deleted.");
+    }
+   }); 
+  
+});
+
+
+
 
 
 

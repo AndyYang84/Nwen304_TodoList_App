@@ -112,6 +112,31 @@ app.delete('/api/items',urlencodedParser, async (req,res)=>{
 });
 
 
+
+
+app.reset('/api/items',urlencodedParser, async (req,res)=>{
+  try {
+    const client = await pool.connect();
+    var result = await client.query("DELETE FROM todo_table;");
+    
+      
+    if (!result) {
+         return res.send("RESET Failure");
+       } else {
+         console.log("successful");
+       }
+       res.send(result.rows);
+       client.release();
+     } catch (err) {
+       console.error(err);
+       res.send("Error " + err); 
+  }
+ });
+
+
+
+
+
 app.get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
   
