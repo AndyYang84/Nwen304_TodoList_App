@@ -68,6 +68,11 @@ $('#refresh').click( function(){
   location.reload();
 });
 
+$('#comment').button({
+  icons:{primary: "ui-icon-document" }}).click(function() {
+  $('#comment_dialog').dialog('open'); 
+});
+
 
 
 
