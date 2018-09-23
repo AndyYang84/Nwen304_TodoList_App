@@ -56,8 +56,7 @@ $('#reset').click( function(){
   $.ajax({
     method: 'DELETE',
     url: '/api/items/reset',
-    data: {user_name: n , task: t},
-    success: function addCell() {
+    success: function () {
        //alert("Successfully deleted.");
     }
    }); 
