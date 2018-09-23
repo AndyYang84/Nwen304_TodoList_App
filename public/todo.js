@@ -53,6 +53,7 @@ $('#show').click( function(){
 
 $('#reset').button({icons: {primary: "ui-icon-battery-3"  }});
 $('#reset').click( function(){
+  location.reload();
   $.ajax({
     method: 'DELETE',
     url: '/api/items/reset',
@@ -60,7 +61,6 @@ $('#reset').click( function(){
        alert("Reseting and clearing database...");
     }
    });
-   Load(); 
 });
 
 
