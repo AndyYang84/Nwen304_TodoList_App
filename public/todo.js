@@ -68,10 +68,20 @@ $('#refresh').click( function(){
   location.reload();
 });
 
+$('#comment_dialog').dialog({ modal : true, autoOpen : false }); 
 $('#comment').button({
   icons:{primary: "ui-icon-document" }}).click(function() {
   $('#comment_dialog').dialog('open'); 
 });
+
+$('#comment_dialog').dialog({ modal: true, autoOpen:false,
+  buttons: {
+    "Submit": function() {
+
+    },
+    "Cancel": function() { $(this).dialog('close'); }
+  }
+  });
 
 
 
@@ -169,21 +179,6 @@ $('#comment').button({
     cursor: 'pointer',
     placeholder: 'ui-state-highlight',
     cancel: '.delete, .done',
-/** 
-    update: function(event, ui){
-      var x= ui.item.find('.task').text().split("    ");
-       //console.log(ui.item);
-       var t_n= x[0];
-       var u_n= x[1];
-       $.ajax({
-        method: 'PUT',
-        url: '/api/items',
-        data: {complete: false, prev_t: t_n, user_name: u_n, task: t_n},
-        success: function () {
-           //alert("Drag and drop successfully done!");
-        }
-    }); 
-    },  */
     receive: function(e, ui){
       var x= ui.item.find('.task').text().split("    ");
       var complete= (x[2]=="*");
