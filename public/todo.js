@@ -58,9 +58,9 @@ $('#reset').click( function(){
     url: '/api/items/reset',
     success: function () {
        alert("Reseting and clearing database...");
-       Load();
     }
-   }); 
+   });
+   Load(); 
 });
 
 
