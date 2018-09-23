@@ -14,6 +14,7 @@ const pool = new Pool({
 });
 
 var app = express();
+var comments=[];
 
 app
   .use(express.static(path.join(__dirname, 'public')))
@@ -113,7 +114,7 @@ app.delete('/api/items',urlencodedParser, async (req,res)=>{
 
 
 
-
+//FOR RESETTING DATABASE BUTTON
 app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
   try {
     const client = await pool.connect();
@@ -134,11 +135,21 @@ app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
  });
 
 
-
+app.post('/comments',urlencodedParser ,(req, res)=>{
+  const comment= {
+    name: req.body.name,
+    content: req.body.content
+  };
+  comments.push(comment);
+  res.send(comment);
+});
 
 
 app.get('/', (req, res) => res.render('pages/index'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+
+
   
 
 

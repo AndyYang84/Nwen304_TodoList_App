@@ -77,6 +77,13 @@ $('#comment').button({
 $('#comment_dialog').dialog({ modal: true, autoOpen:false,
   buttons: {
     "Submit": function() {
+       var comment_body= $('#comment_body').val();
+       var comment_name= $('#comment_name').val();
+       if(comment_body===""){return false;}
+       //AJAX for posting comments
+       $.post("/comments",{"name": comment_name, "content": comment_body} , function(data, status){
+    })
+
 
     },
     "Cancel": function() { $(this).dialog('close'); }
