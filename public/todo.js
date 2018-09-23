@@ -57,7 +57,8 @@ $('#reset').click( function(){
     method: 'DELETE',
     url: '/api/items/reset',
     success: function () {
-       //alert("Successfully deleted.");
+       alert("Reseting and clearing database...");
+       Load();
     }
    }); 
 });
