@@ -135,6 +135,25 @@ app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
   }
  });
 
+ app.post('/SQLcomments',urlencodedParser, async (req,res)=>{
+  try {
+    const client = await pool.connect();
+ 
+    var result = await client.query("insert into comments values('"+req.body.name+ "','"+req.body.content+"');");   
+    if (!result) {
+         return res.send("POST comments Failure");
+       } else {
+         console.log("successful");
+       }
+       res.send(result.rows);
+       client.release();
+     } catch (err) {
+       console.error(err);
+       res.send("Error " + err);
+  }
+ });
+
+
 
 app.post('/comments',urlencodedParser ,(req, res)=>{
   const comment= {
@@ -145,7 +164,7 @@ app.post('/comments',urlencodedParser ,(req, res)=>{
   res.send(comment);
 });
 
-app.get('/comments',urlencodedParser ,(req, res)=>{
+app.get('/SQLcomments',urlencodedParser ,(req, res)=>{
   res.send(comments);
 });
 
