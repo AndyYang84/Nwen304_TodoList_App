@@ -153,20 +153,28 @@ app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
   }
  });
 
-
-
-app.post('/comments',urlencodedParser ,(req, res)=>{
-  const comment= {
-    name: req.body.name,
-    content: req.body.content
-  };
-  comments.push(comment);
-  res.send(comment);
-});
-
-app.get('/SQLcomments',urlencodedParser ,(req, res)=>{
-  res.send(comments);
-});
+  //**********************************/
+  app.get('/SQLcomments', async (req, res) => {
+    try {
+      const client = await pool.connect()
+      var result = await client.query('SELECT * FROM comments;');   
+     
+      if (!result) {
+        return res.send('No data found');
+        }else{
+        result.rows.forEach(row=>{
+        console.log(row);
+        }); 
+        }
+  
+    res.send(result.rows);
+    client.release();
+  
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  });
 
 
 app.get('/', (req, res) => res.render('pages/index'))
