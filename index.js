@@ -121,7 +121,7 @@ app.delete('/api/items/reset',urlencodedParser, async (req,res)=>{
     const client = await pool.connect();
     var result = await client.query("DELETE FROM todo_table;");
     
-      
+       
     if (!result) {
          return res.send("RESET Failure");
        } else {
